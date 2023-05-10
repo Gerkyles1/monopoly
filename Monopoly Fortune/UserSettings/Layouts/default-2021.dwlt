@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 93
+  controlID: 41
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 94
+  controlID: 42
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -324,22 +324,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ofice/materials
+    - Assets/player
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/ofice/materials
+  - Assets/player
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\User\Documents\GitHub\monopoly\Monopoly Fortune
+  m_LastProjectPath: D:\github\monopoly\Monopoly Fortune
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 88580000
-    m_LastClickedID: 22664
-    m_ExpandedIDs: 000000007a5800007c5800007e580000
+    m_SelectedIDs: a8580000
+    m_LastClickedID: 22696
+    m_ExpandedIDs: 000000007a5800007c5800007e58000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -395,7 +395,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000925a0000685b0000545b0000025b000000000000a4580000
+    m_ExpandedInstanceIDs: c6230000925a0000685b0000545b0000025b000000000000a4580000b2570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -497,9 +497,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: dc570000
-      m_LastClickedID: 22492
-      m_ExpandedIDs: 34fbffffaa570000
+      m_SelectedIDs: caf8ffff
+      m_LastClickedID: -1846
+      m_ExpandedIDs: 38fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -749,9 +749,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -29.656034, y: 16.21556, z: -25.27786}
+    m_Target: {x: -32.29617, y: 11.688428, z: -19.953167}
     speed: 2
-    m_Value: {x: -29.656034, y: 16.21556, z: -25.27786}
+    m_Value: {x: -32.29617, y: 11.688428, z: -19.953167}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -798,13 +798,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.51073223, y: -0.013152993, z: 0.007816061, w: 0.85961914}
+    m_Target: {x: 0.6295603, y: 0.006536685, z: -0.005270192, w: 0.77693516}
     speed: 2
-    m_Value: {x: 0.5107132, y: -0.014442216, z: 0.008582037, w: 0.8595871}
+    m_Value: {x: 0.63071084, y: 0.0065286253, z: -0.0052798735, w: 0.77597255}
   m_Size:
-    m_Target: 0.5200474
+    m_Target: 0.9285918
     speed: 2
-    m_Value: 0.5200474
+    m_Value: 0.9285918
   m_Ortho:
     m_Target: 0
     speed: 2
