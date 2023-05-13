@@ -303,8 +303,10 @@
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
 "Assets/audioButton.cs"
 "Assets/button_animation.cs"
+"Assets/cub.cs"
 "Assets/exit.cs"
 "Assets/img.cs"
+"Assets/loading_game_scene.cs"
 "Assets/media.cs"
 "Assets/volume.cs"
 -langversion:9.0
