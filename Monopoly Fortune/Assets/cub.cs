@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -8,25 +9,29 @@ public class cub : MonoBehaviour
 {
 
     private Rigidbody _rigidbody;
+    private MeshRenderer meshRenderer;
     private Transform _transform;
     public bool isThrowing;
     public Text text;
-
     // Start is called before the first frame update
     void Start()
     {
         _transform = transform;
         _rigidbody = GetComponent<Rigidbody>();
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
         _rigidbody.isKinematic = true;
-        _transform.position = new Vector3(-30f, 10f, -15f);
+        _transform.position = new Vector3(-30f, 15f, -15f);
+        gameObject.SetActive(false);
     }
     public void Throw()
     {
+        gameObject.SetActive(true);
+
         text.text = "0";
         _rigidbody.isKinematic = false;
 
-        _transform.position = new Vector3(-30f, 10f, -15f);
-        _transform.rotation = Quaternion.LookRotation(Random.insideUnitSphere);
+       // _transform.position = new Vector3(-30f, 30f, -15f);
+        _transform.rotation = Quaternion.LookRotation(UnityEngine.Random.insideUnitSphere);
 
         StartCoroutine(WaitForSleep());
     }
@@ -71,7 +76,11 @@ public class cub : MonoBehaviour
         }
 
         _rigidbody.isKinematic = true;
-        _transform.position = new Vector3(-30f, 10f, -15f);
-    }
+        _transform.position = new Vector3(-30f, 15f, -15f);
+        gameObject.SetActive(false);
 
+
+
+    }
+ 
 }
