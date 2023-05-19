@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.24f1 (cf10dcf7010d) revision 13570268'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'ru' Physical Memory: 16026 MB
+OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'ru' Physical Memory: 7068 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2021.3.24f1\Editor\Unity.exe
+D:\2021.3.24f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-C:/Users/User/Documents/GitHub/monopoly/Monopoly Fortune
+D:/github/monopoly/Monopoly Fortune
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-62201
-Successfully changed project path to: C:/Users/User/Documents/GitHub/monopoly/Monopoly Fortune
-C:/Users/User/Documents/GitHub/monopoly/Monopoly Fortune
+53663
+Successfully changed project path to: D:/github/monopoly/Monopoly Fortune
+D:/github/monopoly/Monopoly Fortune
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,213 +47,68 @@ C:/Users/User/Documents/GitHub/monopoly/Monopoly Fortune
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [6460] Host "[IP] 172.19.224.1 [Port] 0 [Flags] 2 [Guid] 1590486713 [EditorId] 1590486713 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-QMH1DPE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [10120] Host "[IP] 26.26.205.155 [Port] 0 [Flags] 2 [Guid] 3459232899 [EditorId] 3459232899 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-TI2IGHK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [6460] Host "[IP] 172.19.224.1 [Port] 0 [Flags] 2 [Guid] 1590486713 [EditorId] 1590486713 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-QMH1DPE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [10120] Host "[IP] 26.26.205.155 [Port] 0 [Flags] 2 [Guid] 3459232899 [EditorId] 3459232899 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-TI2IGHK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 69.46 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 193.73 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.24f1 (cf10dcf7010d)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/User/Documents/GitHub/monopoly/Monopoly Fortune/Assets
+[Subsystems] Discovering subsystems at path D:/2021.3.24f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/github/monopoly/Monopoly Fortune/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0x9a49)
-    Vendor:   Intel
-    VRAM:     8013 MB
-    Driver:   27.20.100.8935
+    Renderer: Radeon RX 560 Series (ID=0x67ef)
+    Vendor:   ATI
+    VRAM:     4074 MB
+    Driver:   31.0.12027.9001
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56036
+Mono path[0] = 'D:/2021.3.24f1/Editor/Data/Managed'
+Mono path[1] = 'D:/2021.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/2021.3.24f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56528
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005652 seconds.
+Register platform support module: D:/2021.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003906 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 85.21 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 145.17 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.595 seconds
+- Completed reload, in  1.541 seconds
 Domain Reload Profiling:
-	ReloadAssembly (595ms)
-		BeginReloadAssembly (79ms)
+	ReloadAssembly (1541ms)
+		BeginReloadAssembly (247ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (428ms)
-			LoadAssemblies (77ms)
+		EndReloadAssembly (1098ms)
+			LoadAssemblies (246ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (94ms)
+			SetupTypeCache (263ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (28ms)
-			SetupLoadedEditorAssemblies (260ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (644ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (85ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (118ms)
-				ProcessInitializeOnLoadMethodAttributes (47ms)
+				RefreshPlugins (145ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (371ms)
+				ProcessInitializeOnLoadMethodAttributes (109ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003785 seconds.
+Registered in 0.007573 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\User\Documents\GitHub\monopoly\Monopoly Fortune\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\User\Documents\GitHub\monopoly\Monopoly Fortune\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\github\monopoly\Monopoly Fortune\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\github\monopoly\Monopoly Fortune\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.11 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.057 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1058ms)
-		BeginReloadAssembly (109ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (851ms)
-			LoadAssemblies (77ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (236ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (45ms)
-			SetupLoadedEditorAssemblies (472ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (67ms)
-				ProcessInitializeOnLoadAttributes (371ms)
-				ProcessInitializeOnLoadMethodAttributes (20ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3066 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 23 unused Assets / (87.9 KB). Loaded Objects now: 3529.
-Memory consumption went from 110.7 MB to 110.6 MB.
-Total: 4.564600 ms (FindLiveObjects: 0.327900 ms CreateObjectMapping: 0.307500 ms MarkObjects: 3.781900 ms  DeleteObjects: 0.145700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 83270.667458 seconds.
-  path: Assets/Tephaty/Main/NormalCeilingMain.png
-  artifactKey: Guid(edd79b88d8ed4114bbb02a6bce789ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Main/NormalCeilingMain.png using Guid(edd79b88d8ed4114bbb02a6bce789ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93c903ab26d34ef3a75f3056725aa96d') in 0.115389 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Tephaty/Main/tephaty_main.fbx
-  artifactKey: Guid(0e153bdac1a4c6646b7a8b0fa60b48a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Main/tephaty_main.fbx using Guid(0e153bdac1a4c6646b7a8b0fa60b48a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27d5994e11e899434d23544a1f050956') in 0.285654 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 35.360098 seconds.
-  path: Assets/Tephaty/Main/NormalCeilingMain 1.png
-  artifactKey: Guid(411d611eaf3922c40a5d54d266bd2746) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Main/NormalCeilingMain 1.png using Guid(411d611eaf3922c40a5d54d266bd2746) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b8e217334e99813100a773b998f820f') in 0.021464 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 59.658719 seconds.
-  path: Assets/Tephaty/Main/Ceiling_material.mat
-  artifactKey: Guid(c0ee7ab5c49051945b890a937c6e9a9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Main/Ceiling_material.mat using Guid(c0ee7ab5c49051945b890a937c6e9a9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45fe41be174198682f889c7f58994c9d') in 0.035462 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Tephaty/Main/Floor_material.mat
-  artifactKey: Guid(bd746ad8991125f4e82a4b7e9eaf483e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Main/Floor_material.mat using Guid(bd746ad8991125f4e82a4b7e9eaf483e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '750a27bf772e5dc0083bbc83d7eed190') in 0.022220 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Tephaty/Main/Wall_material.mat
-  artifactKey: Guid(ddb1b1f74d61ecc49ae2794c04633b8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Main/Wall_material.mat using Guid(ddb1b1f74d61ecc49ae2794c04633b8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4100a9ebd351470fbf82efdaa775a5fe') in 0.038241 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 53.780081 seconds.
-  path: Assets/Tephaty/Main/Materials/NormalCeilingMain.mat
-  artifactKey: Guid(c4248360a57dca04aaeec85aaa6a5365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Main/Materials/NormalCeilingMain.mat using Guid(c4248360a57dca04aaeec85aaa6a5365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bb34d69574bdcb5f46208f750d9dc1e') in 0.017445 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000059 seconds.
-  path: Assets/Tephaty/Main/Materials/RoughnessCeilingMain.mat
-  artifactKey: Guid(b36e55c0cbb439046899f6f9bba3c57e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Main/Materials/RoughnessCeilingMain.mat using Guid(b36e55c0cbb439046899f6f9bba3c57e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44b97e83d88df831ea5ff9aa131cc10a') in 0.025617 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Tephaty/Main/Materials/OpacityCeilingMain.mat
-  artifactKey: Guid(e5fe32fcffdbddf4c8e2a29866d4c86d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Main/Materials/OpacityCeilingMain.mat using Guid(e5fe32fcffdbddf4c8e2a29866d4c86d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70f53b644d78bbf061e06b83d3b2c304') in 0.026549 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 123.058322 seconds.
-  path: Assets/Tephaty/Glass/Glass.mat
-  artifactKey: Guid(f5ca1ddf7c86346428686d458f451985) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Glass/Glass.mat using Guid(f5ca1ddf7c86346428686d458f451985) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b01583546f15351609be64a8c8cbba1') in 0.017066 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000055 seconds.
-  path: Assets/Tephaty/Glass/PVC.mat
-  artifactKey: Guid(84cb994ee5c7758479bd19c6f99b3c71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Glass/PVC.mat using Guid(84cb994ee5c7758479bd19c6f99b3c71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dadc9ce65859214826dc3fde9835724') in 0.019138 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 294.454091 seconds.
-  path: Assets/Tephaty/Props/MetallicProps.png
-  artifactKey: Guid(3b01919b6fba1f345aef415a1ec70604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Props/MetallicProps.png using Guid(3b01919b6fba1f345aef415a1ec70604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3d548882f9507eeb6c8366a0fec0ea8') in 0.021631 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Tephaty/Props/OpacityProps.png
-  artifactKey: Guid(e05508a26a0f43c43856012389819ea0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Props/OpacityProps.png using Guid(e05508a26a0f43c43856012389819ea0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '683bf857eab33b514fac338d8d4a3cb2') in 0.024706 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Tephaty/Props/RoughnessProps.png
-  artifactKey: Guid(391beeac2a507ab449f37d4bcc06fbc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Props/RoughnessProps.png using Guid(391beeac2a507ab449f37d4bcc06fbc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbb38c7a745254ec4628a90a1154d89a') in 0.022244 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7877.534711 seconds.
-  path: Assets/Tephaty/Glass/Plastic.mat
-  artifactKey: Guid(71978d1a0ddc2d94ab3cb39b50610bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Glass/Plastic.mat using Guid(71978d1a0ddc2d94ab3cb39b50610bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b08d52476c0a960256d3ce2c206258fb') in 0.044963 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000150 seconds.
-  path: Assets/Tephaty/Glass/tephaty_glass.fbx
-  artifactKey: Guid(e8ec96469991a6d4b81f44395513c4c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tephaty/Glass/tephaty_glass.fbx using Guid(e8ec96469991a6d4b81f44395513c4c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb4b6f65fb788f5087bd8f426a2b1343') in 0.088147 seconds 
