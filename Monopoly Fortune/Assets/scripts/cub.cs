@@ -11,6 +11,7 @@ public class cub : MonoBehaviour
     private Rigidbody _rigidbody;
     private MeshRenderer meshRenderer;
     private Transform _transform;
+    public playerMoving playerScrt;
     public bool isThrowing;
     public Text text;
     // Start is called before the first frame update
@@ -40,36 +41,33 @@ public class cub : MonoBehaviour
     {
         yield return new WaitUntil(() => _rigidbody.IsSleeping());
 
-        if (Vector3.Dot(transform.forward, Vector3.up) > 0.8f)
-        {
-            text.text = "4";//4
-        }
-        else if (Vector3.Dot(-transform.forward, Vector3.up) > 0.8f)
-        {
-            text.text = "3";//3
+        //playerScrt.step();
 
-        }
-        else if (Vector3.Dot(transform.right, Vector3.up) > 0.8f)
+        if (Vector3.Dot(transform.up, Vector3.up) > 0.8f)
         {
-            text.text = "5";//5
-
+            playerScrt.step(1);
         }
         else if (Vector3.Dot(-transform.right, Vector3.up) > 0.8f)
         {
-            text.text = "2";//2
-
+            playerScrt.step(2);
         }
-        else if (Vector3.Dot(transform.up, Vector3.up) > 0.8f)
+        else if (Vector3.Dot(-transform.forward, Vector3.up) > 0.8f)
         {
-            text.text = "1";//1
-
+            playerScrt.step(3);
+        }
+        else if (Vector3.Dot(transform.forward, Vector3.up) > 0.8f)
+        {
+            playerScrt.step(4);
+        }
+        else if (Vector3.Dot(transform.right, Vector3.up) > 0.8f)
+        {
+            playerScrt.step(5);
         }
         else if (Vector3.Dot(-transform.up, Vector3.up) > 0.8f)
         {
-            text.text = "6";//6
-
+            playerScrt.step(6);
         }
-        else 
+        else
         {
             Throw();
             yield break;

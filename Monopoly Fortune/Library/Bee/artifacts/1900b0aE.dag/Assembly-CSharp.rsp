@@ -345,14 +345,15 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/audioButton.cs"
-"Assets/button_animation.cs"
-"Assets/cub.cs"
-"Assets/exit.cs"
-"Assets/img.cs"
-"Assets/loading_game_scene.cs"
-"Assets/media.cs"
-"Assets/volume.cs"
+"Assets/scripts/audioButton.cs"
+"Assets/scripts/button_animation.cs"
+"Assets/scripts/cub.cs"
+"Assets/scripts/exit.cs"
+"Assets/scripts/img.cs"
+"Assets/scripts/loading_game_scene.cs"
+"Assets/scripts/media.cs"
+"Assets/scripts/playerMoving.cs"
+"Assets/scripts/volume.cs"
 -langversion:9.0
 
 /deterministic
