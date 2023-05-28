@@ -350,7 +350,6 @@
 "Assets/scripts/cub.cs"
 "Assets/scripts/exit.cs"
 "Assets/scripts/img.cs"
-"Assets/scripts/lin.cs"
 "Assets/scripts/loading_game_scene.cs"
 "Assets/scripts/media.cs"
 "Assets/scripts/playerMoving.cs"
