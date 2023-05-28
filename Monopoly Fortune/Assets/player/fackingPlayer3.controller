@@ -134,7 +134,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|idle"
+  m_Name: idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
