@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cebf96c8e18701b45849d152fdf35b02
+guid: e8ff52fea3bba474c98ae5c47d5e3daa
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -32,6 +32,35 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
+    - serializedVersion: 16
+      name: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|idle.001"
+      takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|idle.001"
+      internalID: 2565289702170375714
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|jump"
       takeName: "\u0410\u0440\u043C\u0430\u0442\u0443\u0440\u0430|jump"
@@ -79,7 +108,7 @@ ModelImporter:
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 0
+      keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
