@@ -3,12 +3,16 @@ using UnityEngine;
 
 public class playerMoving : MonoBehaviour
 {
+    //*********GENERAL**********
+    public object[] filii = null;
+    public bool isBot = true;
+
+    //*********MOVING***********
     private Animator animator;
     private int field=0;
     public int Field
     {
         get { return field; }
-        //set { field = value % 36; }
     }
     public int skips;
 
@@ -18,27 +22,32 @@ public class playerMoving : MonoBehaviour
     private float delay;
     Vector3 targetPosition;
     Vector3 newRotation;
+    private Rigidbody rigidbody;
 
     void Start()
     {
+        rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         numberPlayer--;
     }
-
     public void step(int count)
     {
         StartCoroutine(PlayAnimations(count));
     }
-
     private IEnumerator PlayAnimations(int count)
     {
+        rigidbody.useGravity = false;
         for (int i = 0; i < count; i++)
         {
+            //rigidbody.isKinematic = true;
             animator.applyRootMotion = true;
             animator.SetTrigger("jump");
             yield return new WaitForSeconds(animationDelay);
             animator.applyRootMotion = false;
+            //rigidbody.isKinematic = false;
+
             field++;
+            //yield return new WaitForSeconds(0.3f);
             switch (field)
             {
                 case 11:
@@ -80,6 +89,7 @@ public class playerMoving : MonoBehaviour
             
 
         }
+        rigidbody.useGravity = true;
     }
     private System.Collections.IEnumerator MoveToTarget(Vector3 targetPosition)
     {
@@ -95,4 +105,20 @@ public class playerMoving : MonoBehaviour
 
         transform.position = targetPosition;
     }
+
+    //************BALANCE**************
+    private int balance;
+    public int GetBalance()
+    {
+        return balance;
+    }
+    public bool CheckBalance(int value)
+    {
+        return balance+value>=0;
+    }
+    public void balanceOperation(int value)
+    {
+        balance  += value;
+    }
+
 }

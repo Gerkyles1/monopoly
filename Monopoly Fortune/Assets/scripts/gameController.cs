@@ -9,7 +9,6 @@ public class gameController : MonoBehaviour
     private playerMoving nowplayer;
     private int nowPlayerIndex=0;
 
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -26,6 +25,12 @@ public class gameController : MonoBehaviour
             nowPlayerIndex = (nowPlayerIndex + 1) % 4;
             goto m;
         }
+        //nowplayer.Field;
         nowPlayerIndex = (nowPlayerIndex + 1) % 4;
+
+    }
+    public abstract class Field
+    {
+        public abstract void active(playerMoving nowplayer);
     }
 }
