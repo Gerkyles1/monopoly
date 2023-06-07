@@ -1,11 +1,16 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using static gameController;
 
 public class playerMoving : MonoBehaviour
 {
     //*********GENERAL**********
-    public object[] filii = null;
+    public List<Philia> philies = new List<Philia>();
     public bool isBot = true;
+
+
+
 
     //*********MOVING***********
     private Animator animator;
@@ -22,29 +27,30 @@ public class playerMoving : MonoBehaviour
     private float delay;
     Vector3 targetPosition;
     Vector3 newRotation;
-    private Rigidbody rigidbody;
+    private Rigidbody _rigidbody;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         numberPlayer--;
     }
     public void step(int count)
     {
         StartCoroutine(PlayAnimations(count));
+
     }
     private IEnumerator PlayAnimations(int count)
     {
-        rigidbody.useGravity = false;
+        _rigidbody.useGravity = false;
         for (int i = 0; i < count; i++)
         {
-            //rigidbody.isKinematic = true;
+            //_rigidbody.isKinematic = true;
             animator.applyRootMotion = true;
             animator.SetTrigger("jump");
             yield return new WaitForSeconds(animationDelay);
             animator.applyRootMotion = false;
-            //rigidbody.isKinematic = false;
+            //_rigidbody.isKinematic = false;
 
             field++;
             //yield return new WaitForSeconds(0.3f);
@@ -89,7 +95,7 @@ public class playerMoving : MonoBehaviour
             
 
         }
-        rigidbody.useGravity = true;
+        _rigidbody.useGravity = true;
     }
     private System.Collections.IEnumerator MoveToTarget(Vector3 targetPosition)
     {
@@ -106,6 +112,8 @@ public class playerMoving : MonoBehaviour
         transform.position = targetPosition;
     }
 
+
+
     //************BALANCE**************
     private int balance;
     public int GetBalance()
@@ -120,5 +128,17 @@ public class playerMoving : MonoBehaviour
     {
         balance  += value;
     }
+    public void needPay(int sum)
+    {
+        if (CheckBalance(-sum))
+        {
+            balance  -= sum;
+        }
+        else
+        {
+            //not enough money
+        }
+    }
+
 
 }

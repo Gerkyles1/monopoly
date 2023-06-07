@@ -349,6 +349,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/scripts/audioButton.cs"
 "Assets/scripts/button_animation.cs"
+"Assets/scripts/companyDetalis.cs"
 "Assets/scripts/cub.cs"
 "Assets/scripts/exit.cs"
 "Assets/scripts/gameController.cs"
