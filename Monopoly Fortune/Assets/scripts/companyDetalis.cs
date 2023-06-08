@@ -22,7 +22,7 @@ public class companyDetalis : MonoBehaviour
         price.text = "price " + philia.price;
         for (int i = 0; i > rent.Length; i++)
         {
-            rent[i].text = philia.rent[i].ToString();
+            rent[i].text = ""+philia.rent[i];
         }
         thisObg.SetActive(true);
     }

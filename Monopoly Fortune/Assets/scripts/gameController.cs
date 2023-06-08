@@ -10,7 +10,7 @@ public class gameController : MonoBehaviour
     private playerMoving nowplayer;
     private int nowPlayerIndex=0;
     public companyDetalis detalis;
-    public Field[] map;
+    public static Field[] map;
 
     void Start()
     {
@@ -18,11 +18,16 @@ public class gameController : MonoBehaviour
         {
             new Chance(0),
             new balanceOper(1, 1500),
-            new Philia(2, "Tefaty", 500, new int[]{150, 300, 500},new int[]{ 3, 4}, "sdfsef"),
-            new Philia(3, "Tefaty", 500, new int[]{150, 300, 500},new int[]{ 3, 4}, "sdfsef"),
-            new Philia(4, "Tefaty", 500, new int[]{150, 300, 500},new int[]{ 3, 4}, "sdfsef"),
+            new Philia(2, "Tefaty", 500, new int[]{150, 300, 600},new int[]{ 3, 4}, "sdfsef1"),
+            new Philia(3, "Zuins", 700, new int[]{200, 350, 700},new int[]{ 2, 4}, "sdfsef2"),
+            new Philia(4, "PlusTech", 900, new int[]{250, 400, 800},new int[]{ 2, 3}, "sdfsef3"),
             new Chance(5),
-            new balanceOper(6, -500)
+            new balanceOper(6, -500),
+            new Philia(4, "OgMa", 1000, new int[]{250, 500, 1000},new int[]{ 2, 3}, "sdfsef3"),
+            new Philia(4, "ZeHipe", 900, new int[]{250, 500, 1000},new int[]{ 2, 3}, "sdfsef3"),
+            new Philia(4, "Rotartime", 900, new int[]{300, 600, 1200},new int[]{ 2, 3}, "sdfsef3"),
+            new balanceOper(6, 2000),
+
         };
         Philia.detalis = detalis;
     }
@@ -37,9 +42,12 @@ public class gameController : MonoBehaviour
         }
         cub.Throw(nowplayer);
 
-        map[nowplayer.Field].active(nowplayer);
-        nowPlayerIndex = (nowPlayerIndex + 1) % 4;
 
+    }
+    public void playerEndMoving()
+    {
+        map[nowplayer.Field].active(nowplayer);//     +
+        nowPlayerIndex = (nowPlayerIndex + 1) % 4;
     }
 
 

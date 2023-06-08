@@ -386,7 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9076513d8800f4942aed7f183dd14951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBot: 1
+  isBot: 0
+  game: {fileID: 1742450251}
   skips: 0
   animationDelay: 0.7
   numberPlayer: 3
@@ -1904,6 +1905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBot: 0
+  game: {fileID: 1742450251}
   skips: 0
   animationDelay: 0.7
   numberPlayer: 1
@@ -4271,6 +4273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBot: 0
+  game: {fileID: 1742450251}
   skips: 0
   animationDelay: 0.7
   numberPlayer: 2
@@ -5414,7 +5417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9076513d8800f4942aed7f183dd14951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBot: 1
+  isBot: 0
+  game: {fileID: 1742450251}
   skips: 0
   animationDelay: 0.7
   numberPlayer: 4

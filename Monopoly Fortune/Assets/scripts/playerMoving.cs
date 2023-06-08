@@ -8,6 +8,7 @@ public class playerMoving : MonoBehaviour
     //*********GENERAL**********
     public List<Philia> philies = new List<Philia>();
     public bool isBot = true;
+    public gameController game;
 
 
 
@@ -37,8 +38,7 @@ public class playerMoving : MonoBehaviour
     }
     public void step(int count)
     {
-        StartCoroutine(PlayAnimations(count));
-
+        StartCoroutine(PlayAnimations(count)); 
     }
     private IEnumerator PlayAnimations(int count)
     {
@@ -96,6 +96,7 @@ public class playerMoving : MonoBehaviour
 
         }
         _rigidbody.useGravity = true;
+        game.playerEndMoving(); 
     }
     private System.Collections.IEnumerator MoveToTarget(Vector3 targetPosition)
     {
