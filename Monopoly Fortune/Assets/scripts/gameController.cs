@@ -2,21 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using static playerMoving;
+
 
 public class gameController : MonoBehaviour
 {
-    public playerMoving[] playerScripts;
+    public List<playerMoving> playerScripts;
     public cub cub;
     private playerMoving nowplayer;
     private int nowPlayerIndex=0;
     public companyDetalis detalis;
     public static Field[] map;
+    public Text balance;
 
     void Start()
     {
         map = new Field[]
         {
-            new Chance(0),
+            new Chance(0),//start
             new balanceOper(1, 1500),
             new Philia(2, "Tefaty", 500, new int[]{150, 300, 600},new int[]{ 3, 4}, "sdfsef1"),
             new Philia(3, "Zuins", 700, new int[]{200, 350, 700},new int[]{ 2, 4}, "sdfsef2"),
@@ -46,26 +50,161 @@ public class gameController : MonoBehaviour
     }
     public void playerEndMoving()
     {
-        map[nowplayer.Field].active(nowplayer);//     +
+        map[nowplayer.Field].active(nowplayer.player);
         nowPlayerIndex = (nowPlayerIndex + 1) % 4;
     }
+    public void buyPh()
+    {
+        nowplayer.player.needPay(((Philia)map[nowplayer.Field]).price);
+        ((Philia)map[nowplayer.Field]).swichOwner(nowplayer.player);
+    }
 
+
+
+
+
+
+
+
+    //*********************************************chat gpt
+
+
+
+
+
+    public auctionDataUI auctionData;
+
+    private List<Player> auctionPlayers; // Список игроков, участвующих в аукционе
+    private int currentBid; // Текущая цена на аукционе
+    private int currentPlayerIndex; // Индекс текущего игрока в списке auctionPlayers
+
+    public void auction()
+    {
+        auctionPlayers = new List<Player>();
+
+        currentBid = ((Philia)map[nowplayer.Field]).price; // Начальная цена аукциона
+                                                           // Добавьте всех игроков, кроме nowplayer, в список auctionPlayers
+        foreach (playerMoving i in playerScripts)
+        {
+            if (i != nowplayer && i.player.CheckBalance(currentBid))
+            {
+                auctionPlayers.Add(i.player);
+            }
+        }
+
+        currentPlayerIndex = 0; // Индекс текущего игрока
+
+        StartAuction();
+    }
+
+    private void StartAuction()
+    {
+        
+        while (auctionPlayers.Count > 1)
+        {
+            if (currentPlayerIndex >= auctionPlayers.Count)
+            {
+                currentPlayerIndex = 0; // Возвращаемся к первому игроку
+            }
+
+            Player currentPlayer = auctionPlayers[currentPlayerIndex];
+            if (!currentPlayer.CheckBalance(currentBid + 20))
+            {
+                auctionPlayers.RemoveAt(currentPlayerIndex); // Удаляем текущего игрока с аукциона
+                continue; // Пропускаем остаток кода в текущей итерации цикла
+            }
+
+            if (currentPlayer.isBot)
+            {
+                // Реализация аукциона для бота
+                // ...
+            }
+            else
+            {
+                auctionData.UpdateData(currentBid); // Активируйте часть канваса с кнопками "Да" и "Нет"
+                                                    // Ожидайте нажатия кнопки
+                return; // Выходим из метода и продолжим выполнение после получения ответа от игрока
+            }
+
+            currentPlayerIndex++; // Переходим к следующему игроку
+        }
+
+        // Остался только один игрок на аукционе
+        auctionData.cloth();
+        Player lastAuctioneer = auctionPlayers[0];
+        int lastBidPrice = currentBid;
+
+        lastAuctioneer.needPay(lastBidPrice);
+        ((Philia)map[nowplayer.Field]).swichOwner(lastAuctioneer);
+
+    }
+
+    // Метод, вызываемый при нажатии кнопки "Да"
+    public void OnYesButtonPressed()
+    {
+        currentBid += 20; // Повышаем текущую цену на 20
+        auctionData.UpdateData(currentBid);
+
+        currentPlayerIndex++; // Переходим к следующему игроку
+
+        StartAuction(); // Запускаем аукцион для следующего игрока
+    }
+
+    // Метод, вызываемый при нажатии кнопки "Нет"
+    public void OnNoButtonPressed()
+    {
+
+        //auctionPlayers.RemoveAt(currentPlayerIndex); // Удаляем текущего игрока с аукциона
+        if (currentPlayerIndex < auctionPlayers.Count)
+        {
+            auctionPlayers.RemoveAt(currentPlayerIndex); // Удаляем текущего игрока с аукциона
+        }
+        auctionData.UpdateData(currentBid);
+
+        StartAuction(); // Запускаем аукцион для следующего игрока
+    }
+
+
+
+
+
+
+
+
+    //*********************************************chat gpt
+
+
+
+
+
+
+
+
+
+
+    public void Update()
+    {
+        balance.text = playerScripts[0].player.Balance.ToString();
+    }
 
     public abstract class Field
     {
         public int nomer;
-        public abstract void active(playerMoving nowplayer);
+        public gameController game;
+        public abstract void active(Player nowplayer);
     }
 
     public class Philia : Field
     {
         public static companyDetalis detalis;
-        public playerMoving owner=null;
+        public Player owner = null;
         public string name;
         public int price;
         public int[] rent;
         public int[] colabs;
         public string description;
+        public bool isMortgaged = false;
+
         public Philia(int nomer, string name, int price, int[] rent, int[] colabs, string description)
         {
             this.name = name;
@@ -76,27 +215,40 @@ public class gameController : MonoBehaviour
             this.description = description;
         }
 
-        public override void active(playerMoving nowplayer)
+        public override void active(Player nowplayer)
         {
-            if (!nowplayer.isBot /* && owner == null */)
+            if (owner != null)
+            {
+                nowplayer.needPay(getRent());
+            }
+            else if (!nowplayer.isBot)
             {
                 detalis.show(this);
             }
-            else if (owner != null)
+            else if (nowplayer.isBot)
             {
-                nowplayer.needPay(getRent());
+                if (nowplayer.CheckBalance(this.price))
+                {
+                    game.buyPh();
+                }
+                else
+                {
+
+                }
             }
         }
 
         private int getRent()
         {
+            if (this.isMortgaged)
+                return 0;
             int count = 0;
 
             foreach (Philia philia in owner.philies)
             {
                 foreach (int colab in this.colabs)
                 {
-                    if (philia.nomer == colab)
+                    if (philia.nomer == colab && !philia.isMortgaged)
                     {
                         count++;
                         break;
@@ -109,28 +261,24 @@ public class gameController : MonoBehaviour
             return this.rent[count];
         }
 
-        public void Buy(playerMoving buyer)
+        public void swichOwner(Player newOwner)
         {
-            if (owner == null)
-            {
-                if (buyer.CheckBalance(-price))
-                {
-                    owner = buyer;
-                    buyer.balanceOperation(-price);
+            if (owner != null)
+                owner.philies.Remove(this);
 
-                    buyer.philies.Add(this);
+            owner = newOwner;
+            owner.philies.Add(this);
+        }
 
-                    // Дополнительные действия, связанные с покупкой филии
-                }
-                else
-                {
-                    // Недостаточно средств для покупки филии
-                }
-            }
-            else
-            {
-                // Филия уже имеет владельца
-            }
+        public void mortgage()
+        {
+            isMortgaged = true;
+            owner.balanceOperation(price/2);
+        }
+        public void demortgage()
+        {
+            owner.needPay((int)(price*2+price*0.1f));
+            isMortgaged = false;
         }
     }
 
@@ -142,7 +290,7 @@ public class gameController : MonoBehaviour
             this.nomer = nomer;
             this.sum = sum;
         }
-        public override void active(playerMoving nowplayer)
+        public override void active(Player nowplayer)
         {
             if (sum >= 0)
                 nowplayer.balanceOperation(sum);
@@ -157,9 +305,10 @@ public class gameController : MonoBehaviour
         {
             this.nomer = nomer;
         }
-        public override void active(playerMoving nowplayer)
+        public override void active(Player nowplayer)
         {
 
         }
     }
+
 }

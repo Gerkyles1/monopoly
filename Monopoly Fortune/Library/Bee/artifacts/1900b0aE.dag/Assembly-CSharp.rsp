@@ -347,6 +347,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.Advertisements.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.Advertisements.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/scripts/auctionDataUI.cs"
 "Assets/scripts/audioButton.cs"
 "Assets/scripts/button_animation.cs"
 "Assets/scripts/companyDetalis.cs"

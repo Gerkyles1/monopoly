@@ -5,13 +5,49 @@ using static gameController;
 
 public class playerMoving : MonoBehaviour
 {
+    public class Player
+    {
+        public bool isBot;
+        public List<Philia> philies = new List<Philia>();
+
+        private int balance = 10000;
+
+        public Player(bool bot)
+        {
+            isBot = bot;
+        }
+        public int Balance
+        {
+            get { return balance; }
+        }
+        public bool CheckBalance(int value)
+        {
+            return balance + value >= 0;
+        }
+        public void balanceOperation(int value)
+        {
+            balance += value;
+        }
+        public void needPay(int sum)
+        {
+            if (CheckBalance(-sum))
+            {
+                balance -= sum;
+            }
+            else
+            {
+                //not enough money
+            }
+        }
+
+        
+    }
+
     //*********GENERAL**********
-    public List<Philia> philies = new List<Philia>();
-    public bool isBot = true;
+
     public gameController game;
-
-
-
+    public bool isBot;
+    public Player player ;
 
     //*********MOVING***********
     private Animator animator;
@@ -21,7 +57,6 @@ public class playerMoving : MonoBehaviour
         get { return field; }
     }
     public int skips;
-
     public float animationDelay = 0.7f;
     public int numberPlayer;
     public float moveSpeed = 5f;
@@ -35,6 +70,7 @@ public class playerMoving : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         numberPlayer--;
+        player = new Player(isBot);
     }
     public void step(int count)
     {
@@ -112,34 +148,4 @@ public class playerMoving : MonoBehaviour
 
         transform.position = targetPosition;
     }
-
-
-
-    //************BALANCE**************
-    private int balance;
-    public int GetBalance()
-    {
-        return balance;
-    }
-    public bool CheckBalance(int value)
-    {
-        return balance+value>=0;
-    }
-    public void balanceOperation(int value)
-    {
-        balance  += value;
-    }
-    public void needPay(int sum)
-    {
-        if (CheckBalance(-sum))
-        {
-            balance  -= sum;
-        }
-        else
-        {
-            //not enough money
-        }
-    }
-
-
 }

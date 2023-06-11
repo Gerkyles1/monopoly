@@ -11,19 +11,19 @@ public class companyDetalis : MonoBehaviour
     public GameObject thisObg;
     public Text description;
     public Text price;
-    public Text[] rent;
-    //public Text rent1;
-    //public Text rent2;
-    //public Text rent3;
+    //public Text[] rent;
+    public Text rent1;
+    public Text rent2;
+    public Text rent3;
 
     public void show(Philia philia)
     {
         description.text = philia.description;
         price.text = "price " + philia.price;
-        for (int i = 0; i > rent.Length; i++)
-        {
-            rent[i].text = ""+philia.rent[i];
-        }
+        rent1.text = "" + philia.rent[0];
+        rent2.text = "" + philia.rent[1];
+        rent3.text = "" + philia.rent[2];
+
         thisObg.SetActive(true);
     }
 }
