@@ -146,7 +146,8 @@
         138,
         139,
         140,
-        141
+        141,
+        142
       ],
       "AllowUnexpectedOutput": true,
       "DebugActionIndex": 0
@@ -658,6 +659,17 @@
       "DebugActionIndex": 46
     },
     {
+      "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.Advertisements.dll",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/Data/Managed/UnityEngine.Advertisements.dll"
+      ],
+      "Outputs": [
+        "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.Advertisements.dll"
+      ],
+      "DebugActionIndex": 47
+    },
+    {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.AIModule.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
@@ -666,7 +678,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.AIModule.dll"
       ],
-      "DebugActionIndex": 47
+      "DebugActionIndex": 48
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.AndroidJNIModule.dll",
@@ -677,7 +689,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.AndroidJNIModule.dll"
       ],
-      "DebugActionIndex": 48
+      "DebugActionIndex": 49
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.AnimationModule.dll",
@@ -688,7 +700,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.AnimationModule.dll"
       ],
-      "DebugActionIndex": 49
+      "DebugActionIndex": 50
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ARModule.dll",
@@ -699,7 +711,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ARModule.dll"
       ],
-      "DebugActionIndex": 50
+      "DebugActionIndex": 51
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.AssetBundleModule.dll",
@@ -710,7 +722,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.AssetBundleModule.dll"
       ],
-      "DebugActionIndex": 51
+      "DebugActionIndex": 52
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.AudioModule.dll",
@@ -721,7 +733,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.AudioModule.dll"
       ],
-      "DebugActionIndex": 52
+      "DebugActionIndex": 53
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ClothModule.dll",
@@ -732,7 +744,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ClothModule.dll"
       ],
-      "DebugActionIndex": 53
+      "DebugActionIndex": 54
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ClusterInputModule.dll",
@@ -743,7 +755,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ClusterInputModule.dll"
       ],
-      "DebugActionIndex": 54
+      "DebugActionIndex": 55
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ClusterRendererModule.dll",
@@ -754,7 +766,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ClusterRendererModule.dll"
       ],
-      "DebugActionIndex": 55
+      "DebugActionIndex": 56
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.CoreModule.dll",
@@ -765,7 +777,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.CoreModule.dll"
       ],
-      "DebugActionIndex": 56
+      "DebugActionIndex": 57
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.CrashReportingModule.dll",
@@ -776,7 +788,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.CrashReportingModule.dll"
       ],
-      "DebugActionIndex": 57
+      "DebugActionIndex": 58
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.DirectorModule.dll",
@@ -787,7 +799,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.DirectorModule.dll"
       ],
-      "DebugActionIndex": 58
+      "DebugActionIndex": 59
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.dll",
@@ -798,7 +810,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.dll"
       ],
-      "DebugActionIndex": 59
+      "DebugActionIndex": 60
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.DSPGraphModule.dll",
@@ -809,7 +821,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.DSPGraphModule.dll"
       ],
-      "DebugActionIndex": 60
+      "DebugActionIndex": 61
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.GameCenterModule.dll",
@@ -820,7 +832,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.GameCenterModule.dll"
       ],
-      "DebugActionIndex": 61
+      "DebugActionIndex": 62
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.GIModule.dll",
@@ -831,7 +843,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.GIModule.dll"
       ],
-      "DebugActionIndex": 62
+      "DebugActionIndex": 63
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.GridModule.dll",
@@ -842,7 +854,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.GridModule.dll"
       ],
-      "DebugActionIndex": 63
+      "DebugActionIndex": 64
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.HotReloadModule.dll",
@@ -853,7 +865,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.HotReloadModule.dll"
       ],
-      "DebugActionIndex": 64
+      "DebugActionIndex": 65
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ImageConversionModule.dll",
@@ -864,7 +876,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ImageConversionModule.dll"
       ],
-      "DebugActionIndex": 65
+      "DebugActionIndex": 66
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.IMGUIModule.dll",
@@ -875,7 +887,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.IMGUIModule.dll"
       ],
-      "DebugActionIndex": 66
+      "DebugActionIndex": 67
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.InputLegacyModule.dll",
@@ -886,7 +898,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.InputLegacyModule.dll"
       ],
-      "DebugActionIndex": 67
+      "DebugActionIndex": 68
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.InputModule.dll",
@@ -897,7 +909,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.InputModule.dll"
       ],
-      "DebugActionIndex": 68
+      "DebugActionIndex": 69
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.JSONSerializeModule.dll",
@@ -908,7 +920,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.JSONSerializeModule.dll"
       ],
-      "DebugActionIndex": 69
+      "DebugActionIndex": 70
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.LocalizationModule.dll",
@@ -919,7 +931,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.LocalizationModule.dll"
       ],
-      "DebugActionIndex": 70
+      "DebugActionIndex": 71
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.NVIDIAModule.dll",
@@ -930,7 +942,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.NVIDIAModule.dll"
       ],
-      "DebugActionIndex": 71
+      "DebugActionIndex": 72
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ParticleSystemModule.dll",
@@ -941,7 +953,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ParticleSystemModule.dll"
       ],
-      "DebugActionIndex": 72
+      "DebugActionIndex": 73
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.PerformanceReportingModule.dll",
@@ -952,7 +964,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.PerformanceReportingModule.dll"
       ],
-      "DebugActionIndex": 73
+      "DebugActionIndex": 74
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.Physics2DModule.dll",
@@ -963,7 +975,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.Physics2DModule.dll"
       ],
-      "DebugActionIndex": 74
+      "DebugActionIndex": 75
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.PhysicsModule.dll",
@@ -974,7 +986,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.PhysicsModule.dll"
       ],
-      "DebugActionIndex": 75
+      "DebugActionIndex": 76
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ProfilerModule.dll",
@@ -985,7 +997,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ProfilerModule.dll"
       ],
-      "DebugActionIndex": 76
+      "DebugActionIndex": 77
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll",
@@ -996,7 +1008,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
       ],
-      "DebugActionIndex": 77
+      "DebugActionIndex": 78
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ScreenCaptureModule.dll",
@@ -1007,7 +1019,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.ScreenCaptureModule.dll"
       ],
-      "DebugActionIndex": 78
+      "DebugActionIndex": 79
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.SharedInternalsModule.dll",
@@ -1018,7 +1030,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.SharedInternalsModule.dll"
       ],
-      "DebugActionIndex": 79
+      "DebugActionIndex": 80
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.SpriteMaskModule.dll",
@@ -1029,7 +1041,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.SpriteMaskModule.dll"
       ],
-      "DebugActionIndex": 80
+      "DebugActionIndex": 81
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.SpriteShapeModule.dll",
@@ -1040,7 +1052,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.SpriteShapeModule.dll"
       ],
-      "DebugActionIndex": 81
+      "DebugActionIndex": 82
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.StreamingModule.dll",
@@ -1051,7 +1063,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.StreamingModule.dll"
       ],
-      "DebugActionIndex": 82
+      "DebugActionIndex": 83
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.SubstanceModule.dll",
@@ -1062,7 +1074,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.SubstanceModule.dll"
       ],
-      "DebugActionIndex": 83
+      "DebugActionIndex": 84
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.SubsystemsModule.dll",
@@ -1073,7 +1085,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.SubsystemsModule.dll"
       ],
-      "DebugActionIndex": 84
+      "DebugActionIndex": 85
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TerrainModule.dll",
@@ -1084,7 +1096,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TerrainModule.dll"
       ],
-      "DebugActionIndex": 85
+      "DebugActionIndex": 86
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TerrainPhysicsModule.dll",
@@ -1095,7 +1107,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TerrainPhysicsModule.dll"
       ],
-      "DebugActionIndex": 86
+      "DebugActionIndex": 87
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll",
@@ -1106,7 +1118,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll"
       ],
-      "DebugActionIndex": 87
+      "DebugActionIndex": 88
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll",
@@ -1117,7 +1129,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll"
       ],
-      "DebugActionIndex": 88
+      "DebugActionIndex": 89
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TextRenderingModule.dll",
@@ -1128,7 +1140,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TextRenderingModule.dll"
       ],
-      "DebugActionIndex": 89
+      "DebugActionIndex": 90
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TilemapModule.dll",
@@ -1139,7 +1151,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TilemapModule.dll"
       ],
-      "DebugActionIndex": 90
+      "DebugActionIndex": 91
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TLSModule.dll",
@@ -1150,7 +1162,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.TLSModule.dll"
       ],
-      "DebugActionIndex": 91
+      "DebugActionIndex": 92
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UI.dll",
@@ -1161,7 +1173,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UI.dll"
       ],
-      "DebugActionIndex": 92
+      "DebugActionIndex": 93
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UIElementsModule.dll",
@@ -1172,7 +1184,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UIElementsModule.dll"
       ],
-      "DebugActionIndex": 93
+      "DebugActionIndex": 94
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UIElementsNativeModule.dll",
@@ -1183,7 +1195,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UIElementsNativeModule.dll"
       ],
-      "DebugActionIndex": 94
+      "DebugActionIndex": 95
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UIModule.dll",
@@ -1194,7 +1206,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UIModule.dll"
       ],
-      "DebugActionIndex": 95
+      "DebugActionIndex": 96
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UmbraModule.dll",
@@ -1205,7 +1217,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UmbraModule.dll"
       ],
-      "DebugActionIndex": 96
+      "DebugActionIndex": 97
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UNETModule.dll",
@@ -1216,7 +1228,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UNETModule.dll"
       ],
-      "DebugActionIndex": 97
+      "DebugActionIndex": 98
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll",
@@ -1227,7 +1239,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll"
       ],
-      "DebugActionIndex": 98
+      "DebugActionIndex": 99
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityAnalyticsModule.dll",
@@ -1238,7 +1250,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityAnalyticsModule.dll"
       ],
-      "DebugActionIndex": 99
+      "DebugActionIndex": 100
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityConnectModule.dll",
@@ -1249,7 +1261,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityConnectModule.dll"
       ],
-      "DebugActionIndex": 100
+      "DebugActionIndex": 101
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityCurlModule.dll",
@@ -1260,7 +1272,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityCurlModule.dll"
       ],
-      "DebugActionIndex": 101
+      "DebugActionIndex": 102
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityTestProtocolModule.dll",
@@ -1271,7 +1283,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityTestProtocolModule.dll"
       ],
-      "DebugActionIndex": 102
+      "DebugActionIndex": 103
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll",
@@ -1282,7 +1294,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll"
       ],
-      "DebugActionIndex": 103
+      "DebugActionIndex": 104
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll",
@@ -1293,7 +1305,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll"
       ],
-      "DebugActionIndex": 104
+      "DebugActionIndex": 105
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityWebRequestModule.dll",
@@ -1304,7 +1316,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityWebRequestModule.dll"
       ],
-      "DebugActionIndex": 105
+      "DebugActionIndex": 106
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll",
@@ -1315,7 +1327,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll"
       ],
-      "DebugActionIndex": 106
+      "DebugActionIndex": 107
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll",
@@ -1326,7 +1338,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll"
       ],
-      "DebugActionIndex": 107
+      "DebugActionIndex": 108
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.VehiclesModule.dll",
@@ -1337,7 +1349,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.VehiclesModule.dll"
       ],
-      "DebugActionIndex": 108
+      "DebugActionIndex": 109
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.VFXModule.dll",
@@ -1348,7 +1360,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.VFXModule.dll"
       ],
-      "DebugActionIndex": 109
+      "DebugActionIndex": 110
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.VideoModule.dll",
@@ -1359,7 +1371,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.VideoModule.dll"
       ],
-      "DebugActionIndex": 110
+      "DebugActionIndex": 111
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.VirtualTexturingModule.dll",
@@ -1370,7 +1382,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.VirtualTexturingModule.dll"
       ],
-      "DebugActionIndex": 111
+      "DebugActionIndex": 112
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.VRModule.dll",
@@ -1381,7 +1393,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.VRModule.dll"
       ],
-      "DebugActionIndex": 112
+      "DebugActionIndex": 113
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.WindModule.dll",
@@ -1392,7 +1404,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.WindModule.dll"
       ],
-      "DebugActionIndex": 113
+      "DebugActionIndex": 114
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.XRModule.dll",
@@ -1403,7 +1415,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Managed/UnityEngine.XRModule.dll"
       ],
-      "DebugActionIndex": 114
+      "DebugActionIndex": 115
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info",
@@ -1414,7 +1426,7 @@
         "Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 115
+      "DebugActionIndex": 116
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/app.info",
@@ -1426,9 +1438,9 @@
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/app.info"
       ],
       "ToBuildDependencies": [
-        115
+        116
       ],
-      "DebugActionIndex": 116
+      "DebugActionIndex": 117
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Resources/unity default resources",
@@ -1439,7 +1451,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune_Data/Resources/unity default resources"
       ],
-      "DebugActionIndex": 117
+      "DebugActionIndex": 118
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune.exe",
@@ -1450,7 +1462,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/Monopoly Fortune.exe"
       ],
-      "DebugActionIndex": 118
+      "DebugActionIndex": 119
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/UnityCrashHandler64.exe",
@@ -1461,7 +1473,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/UnityCrashHandler64.exe"
       ],
-      "DebugActionIndex": 119
+      "DebugActionIndex": 120
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/UnityPlayer.dll",
@@ -1472,7 +1484,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/UnityPlayer.dll"
       ],
-      "DebugActionIndex": 120
+      "DebugActionIndex": 121
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll",
@@ -1483,7 +1495,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll"
       ],
-      "DebugActionIndex": 121
+      "DebugActionIndex": 122
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll",
@@ -1494,7 +1506,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll"
       ],
-      "DebugActionIndex": 122
+      "DebugActionIndex": 123
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/browscap.ini",
@@ -1505,7 +1517,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/browscap.ini"
       ],
-      "DebugActionIndex": 123
+      "DebugActionIndex": 124
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/config",
@@ -1516,7 +1528,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/config"
       ],
-      "DebugActionIndex": 124
+      "DebugActionIndex": 125
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx",
@@ -1527,7 +1539,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx"
       ],
-      "DebugActionIndex": 125
+      "DebugActionIndex": 126
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/2.0/machine.config",
@@ -1538,7 +1550,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/2.0/machine.config"
       ],
-      "DebugActionIndex": 126
+      "DebugActionIndex": 127
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/2.0/settings.map",
@@ -1549,7 +1561,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/2.0/settings.map"
       ],
-      "DebugActionIndex": 127
+      "DebugActionIndex": 128
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/2.0/web.config",
@@ -1560,7 +1572,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/2.0/web.config"
       ],
-      "DebugActionIndex": 128
+      "DebugActionIndex": 129
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser",
@@ -1571,7 +1583,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser"
       ],
-      "DebugActionIndex": 129
+      "DebugActionIndex": 130
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx",
@@ -1582,7 +1594,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx"
       ],
-      "DebugActionIndex": 130
+      "DebugActionIndex": 131
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.0/machine.config",
@@ -1593,7 +1605,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.0/machine.config"
       ],
-      "DebugActionIndex": 131
+      "DebugActionIndex": 132
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.0/settings.map",
@@ -1604,7 +1616,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.0/settings.map"
       ],
-      "DebugActionIndex": 132
+      "DebugActionIndex": 133
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.0/web.config",
@@ -1615,7 +1627,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.0/web.config"
       ],
-      "DebugActionIndex": 133
+      "DebugActionIndex": 134
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser",
@@ -1626,7 +1638,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser"
       ],
-      "DebugActionIndex": 134
+      "DebugActionIndex": 135
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx",
@@ -1637,7 +1649,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx"
       ],
-      "DebugActionIndex": 135
+      "DebugActionIndex": 136
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.5/machine.config",
@@ -1648,7 +1660,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.5/machine.config"
       ],
-      "DebugActionIndex": 136
+      "DebugActionIndex": 137
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.5/settings.map",
@@ -1659,7 +1671,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.5/settings.map"
       ],
-      "DebugActionIndex": 137
+      "DebugActionIndex": 138
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.5/web.config",
@@ -1670,7 +1682,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.5/web.config"
       ],
-      "DebugActionIndex": 138
+      "DebugActionIndex": 139
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser",
@@ -1681,7 +1693,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser"
       ],
-      "DebugActionIndex": 139
+      "DebugActionIndex": 140
     },
     {
       "Annotation": "CopyFiles C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/mconfig/config.xml",
@@ -1692,7 +1704,7 @@
       "Outputs": [
         "C:/unity/progects/Monopoly Fortune/for_exe/MonoBleedingEdge/etc/mono/mconfig/config.xml"
       ],
-      "DebugActionIndex": 140
+      "DebugActionIndex": 141
     },
     {
       "Annotation": "Player",
@@ -1814,7 +1826,7 @@
         112,
         113,
         114,
-        116,
+        115,
         117,
         118,
         119,
@@ -1838,10 +1850,11 @@
         137,
         138,
         139,
-        140
+        140,
+        141
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 141
+      "DebugActionIndex": 142
     }
   ],
   "FileSignatures": [
@@ -2044,7 +2057,7 @@
   "EmitDataForBeeWhy": 0,
         "NamedNodes": {
           "all_tundra_nodes": 0,
-          "Player": 141
+          "Player": 142
         }
 ,  "DefaultNodes": [
     0

@@ -358,6 +358,7 @@
 "Assets/scripts/loading_game_scene.cs"
 "Assets/scripts/media.cs"
 "Assets/scripts/playerMoving.cs"
+"Assets/scripts/sellMenu.cs"
 "Assets/scripts/volume.cs"
 -langversion:9.0
 

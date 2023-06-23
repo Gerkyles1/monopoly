@@ -2,6 +2,7 @@
 -a="C:\Users\User\Documents\GitHub\monopoly\Monopoly Fortune\Library\PlayerScriptAssemblies\UnityEngine.TestRunner.dll"
 -a="C:\Users\User\Documents\GitHub\monopoly\Monopoly Fortune\Library\PlayerScriptAssemblies\Unity.Timeline.dll"
 -a="C:\Users\User\Documents\GitHub\monopoly\Monopoly Fortune\Library\PlayerScriptAssemblies\Unity.TextMeshPro.dll"
+-a="C:\Users\User\Documents\GitHub\monopoly\Monopoly Fortune\Library\PlayerScriptAssemblies\UnityEngine.Advertisements.dll"
 -a="C:\Users\User\Documents\GitHub\monopoly\Monopoly Fortune\Library\PlayerScriptAssemblies\Unity.VisualScripting.Flow.dll"
 -a="C:\Users\User\Documents\GitHub\monopoly\Monopoly Fortune\Library\PlayerScriptAssemblies\UnityEngine.UI.dll"
 -a="C:\Users\User\Documents\GitHub\monopoly\Monopoly Fortune\Library\PlayerScriptAssemblies\Unity.VisualScripting.State.dll"

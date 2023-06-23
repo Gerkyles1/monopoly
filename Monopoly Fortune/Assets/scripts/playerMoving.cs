@@ -8,14 +8,24 @@ public class playerMoving : MonoBehaviour
     public class Player
     {
         public bool isBot;
+        public bool overmoving = false;
         public List<Philia> philies = new List<Philia>();
+        public Material color;
 
         private int balance = 10000;
 
-        public Player(bool bot)
+
+
+
+        public Player(bool bot, Material c)
         {
             isBot = bot;
+            color = c;
         }
+
+
+
+
         public int Balance
         {
             get { return balance; }
@@ -48,6 +58,7 @@ public class playerMoving : MonoBehaviour
     public gameController game;
     public bool isBot;
     public Player player ;
+    public Material color;
 
     //*********MOVING***********
     private Animator animator;
@@ -70,7 +81,7 @@ public class playerMoving : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         numberPlayer--;
-        player = new Player(isBot);
+        player = new Player(isBot, color);
     }
     public void step(int count)
     {
@@ -119,6 +130,7 @@ public class playerMoving : MonoBehaviour
                     newRotation = transform.rotation.eulerAngles;
                     newRotation.y = -90f;
                     transform.rotation = Quaternion.Euler(newRotation);
+                    player.balanceOperation(500);
                     field = 0;
                     break;
                 default:
@@ -132,7 +144,8 @@ public class playerMoving : MonoBehaviour
 
         }
         _rigidbody.useGravity = true;
-        game.playerEndMoving(); 
+        game.FieldActive();
+        //game.playerEndMoving(); 
     }
     private System.Collections.IEnumerator MoveToTarget(Vector3 targetPosition)
     {
