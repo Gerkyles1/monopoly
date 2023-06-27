@@ -7,6 +7,7 @@ public class playerMoving : MonoBehaviour
 {
     public class Player
     {
+        public static gameController game;
         public bool isBot;
         public bool overmoving = false;
         public List<Philia> philies = new List<Philia>();
@@ -40,29 +41,37 @@ public class playerMoving : MonoBehaviour
         }
         public void needPay(int sum)
         {
-            if (CheckBalance(-sum))
+            if (this.isBot)
             {
-                balance -= sum;
+
             }
             else
             {
-                //not enough money
+
             }
+            this.overmoving = true;
         }
 
-        
+        public bool tradeofferBot(List<Philia> takePh, List<Philia> givePh, int takeM, int giveM)
+        {
+            return true;
+        }
+
+
     }
 
     //*********GENERAL**********
 
     public gameController game;
     public bool isBot;
-    public Player player ;
+    public Player player;
     public Material color;
+    public Material colorForUI;
+    public string Name;
 
     //*********MOVING***********
     private Animator animator;
-    private int field=0;
+    private int field = 0;
     public int Field
     {
         get { return field; }
@@ -78,6 +87,7 @@ public class playerMoving : MonoBehaviour
 
     void Start()
     {
+        Player.game = game;
         _rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         numberPlayer--;
@@ -85,7 +95,7 @@ public class playerMoving : MonoBehaviour
     }
     public void step(int count)
     {
-        StartCoroutine(PlayAnimations(count)); 
+        StartCoroutine(PlayAnimations(count));
     }
     private IEnumerator PlayAnimations(int count)
     {
@@ -111,7 +121,7 @@ public class playerMoving : MonoBehaviour
                     transform.rotation = Quaternion.Euler(newRotation);
                     break;
                 case 18:
-                    targetPosition = new Vector3(-36 , transform.position.y, -10.6f - (0.25f * numberPlayer));
+                    targetPosition = new Vector3(-36, transform.position.y, -10.6f - (0.25f * numberPlayer));
                     StartCoroutine(MoveToTarget(targetPosition));
                     newRotation = transform.rotation.eulerAngles;
                     newRotation.y = 90f;
@@ -125,7 +135,7 @@ public class playerMoving : MonoBehaviour
                     transform.rotation = Quaternion.Euler(newRotation);
                     break;
                 case 36:
-                    targetPosition = new Vector3(-21.75f , transform.position.y, -21f+ (0.25f * numberPlayer));
+                    targetPosition = new Vector3(-21.75f, transform.position.y, -21f + (0.25f * numberPlayer));
                     StartCoroutine(MoveToTarget(targetPosition));
                     newRotation = transform.rotation.eulerAngles;
                     newRotation.y = -90f;
@@ -139,9 +149,7 @@ public class playerMoving : MonoBehaviour
 
             }
             yield return new WaitForSeconds(delay);
-            delay = 0.5f;
-            
-
+            delay = 0.7f;
         }
         _rigidbody.useGravity = true;
         game.FieldActive();

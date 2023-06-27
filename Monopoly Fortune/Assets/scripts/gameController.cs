@@ -11,7 +11,7 @@ public class gameController : MonoBehaviour
     public List<playerMoving> playerScripts;
     public cub cub;
     private playerMoving nowplayer;
-    private int nowPlayerIndex=0;
+    private int nowPlayerIndex = 0;
     public companyDetalis detalis;
     public static Field[] map;
     public Text balance;
@@ -21,6 +21,7 @@ public class gameController : MonoBehaviour
     public GameObject[] builds;
     public Sprite[] logotipos;
     public Image auctionlogo;
+    //private bool startauction = false;
 
 
     void Start()
@@ -70,8 +71,6 @@ public class gameController : MonoBehaviour
     }
     public void meinMethod()
     {
-        nowplayer = playerScripts[nowPlayerIndex];
-
         while (nowplayer.skips > 0)
         {
             nowplayer.skips--;
@@ -87,9 +86,10 @@ public class gameController : MonoBehaviour
     }
     public void playerEndMoving()
     {
-        
-        nowPlayerIndex = (nowPlayerIndex + 1) % 4;
-        if (playerScripts[nowPlayerIndex].player.isBot)
+
+        nowPlayerIndex = (nowPlayerIndex + 1) % playerScripts.Count;
+        nowplayer = playerScripts[nowPlayerIndex];
+        if (nowplayer.player.isBot)
         {
             meinMethod();
             return;
@@ -102,27 +102,40 @@ public class gameController : MonoBehaviour
     }
     public void buyPh()
     {
-        nowplayer.player.needPay(((Philia)map[nowplayer.Field]).price);
-        ((Philia)map[nowplayer.Field]).swichOwner(nowplayer.player);
-        nowplayer.player.overmoving = true;
+        if (nowplayer.player.CheckBalance(-((Philia)map[nowplayer.Field]).price))
+        {
+            nowplayer.player.balanceOperation(-((Philia)map[nowplayer.Field]).price);
+            ((Philia)map[nowplayer.Field]).swichOwner(nowplayer.player);
+            nowplayer.player.overmoving = true;
+
+        }
+        else
+            FieldActive();
+        //not enough money
+
     }
     public void Update()
     {
         balance.text = playerScripts[0].player.Balance.ToString();
-        for (int i=0; i<3;i++)
-            Botbalances[i].text = playerScripts[i+1].player.Balance.ToString();
+        for (int i = 0; i < 3; i++)
+            Botbalances[i].text = playerScripts[i + 1].player.Balance.ToString();
         if (nowplayer.player.overmoving)
         {
             nowplayer.player.overmoving = false;
             playerEndMoving();
-        }
+        }/*
+        if (startauction)
+        {
+            startauction = false;
+            auction();
+        }*/
     }
 
     public auctionDataUI auctionData;
 
-    private List<Player> auctionPlayers; 
-    private int currentBid; 
-    private int currentPlayerIndex; 
+    private List<Player> auctionPlayers;
+    private int currentBid;
+    private int currentPlayerIndex;
     private Philia nowAuctionphilia;
     private bool auctionIs = false;
 
@@ -131,23 +144,41 @@ public class gameController : MonoBehaviour
         auctionPlayers = new List<Player>();
         nowAuctionphilia = (Philia)map[nowplayer.Field];
 
-        currentBid = nowAuctionphilia.price; 
+        currentBid = nowAuctionphilia.price;
         foreach (playerMoving i in playerScripts)
         {
-            if (i != nowplayer && i.player.CheckBalance(currentBid))
+            if (i != nowplayer && i.player.CheckBalance(-currentBid))
             {
                 auctionPlayers.Add(i.player);
             }
         }
 
-        currentPlayerIndex = 0; 
+        currentPlayerIndex = 0;
+
+        if (auctionPlayers.Count == 0)
+        {
+            nowplayer.player.overmoving = true;
+            return;
+        }
+        if (auctionPlayers.Count == 1)
+        {
+            if (auctionPlayers[currentPlayerIndex].isBot)
+                OnYesButtonPressed();
+            else
+            {
+                auctionlogo.sprite = nowAuctionphilia.logotipies;
+                auctionData.UpdateData(currentBid);
+            }
+            nowplayer.player.overmoving = true;
+            return;
+        }
 
         StartAuction();
     }
 
     private void StartAuction()
     {
-        
+
         while (auctionPlayers.Count > 1)
         {
             if (currentPlayerIndex >= auctionPlayers.Count)
@@ -158,20 +189,27 @@ public class gameController : MonoBehaviour
             Player currentPlayer = auctionPlayers[currentPlayerIndex];
             if (!currentPlayer.CheckBalance(-(currentBid + 20)))
             {
-                auctionPlayers.RemoveAt(currentPlayerIndex); 
-                continue; 
+                auctionPlayers.RemoveAt(currentPlayerIndex);
+                continue;
             }
 
             if (currentPlayer.isBot)
             {
-                // BOT
-                return; 
+                System.Random random = new System.Random();
+                int variant = random.Next(1, 11);
+                if (variant != 4 && variant != 6)
+                {
+                    OnYesButtonPressed();
+                }
+                else
+                    OnNoButtonPressed();
+                return;
             }
             else
             {
                 auctionlogo.sprite = nowAuctionphilia.logotipies;
-                auctionData.UpdateData(currentBid); 
-                return; 
+                auctionData.UpdateData(currentBid);
+                return;
             }
 
             //currentPlayerIndex++; 
@@ -187,7 +225,7 @@ public class gameController : MonoBehaviour
         Player lastAuctioneer = auctionPlayers[0];
         int lastBidPrice = currentBid;
 
-        lastAuctioneer.needPay(lastBidPrice);
+        lastAuctioneer.balanceOperation(-lastBidPrice);
         ((Philia)map[nowplayer.Field]).swichOwner(lastAuctioneer);
         nowplayer.player.overmoving = true;
 
@@ -197,12 +235,12 @@ public class gameController : MonoBehaviour
     public void OnYesButtonPressed()
     {
         auctionIs = true;
-        currentBid += 20; 
+        currentBid += 20;
         auctionData.UpdateData(currentBid);
 
-        currentPlayerIndex++; 
+        currentPlayerIndex++;
 
-        StartAuction(); 
+        StartAuction();
     }
 
     public void OnNoButtonPressed()
@@ -210,14 +248,56 @@ public class gameController : MonoBehaviour
 
 
         if (auctionPlayers.Count > 1)
-            auctionPlayers.RemoveAt(currentPlayerIndex); 
-        
-        else if(auctionPlayers.Count == 1)
+            auctionPlayers.RemoveAt(currentPlayerIndex);
+
+        else if (auctionPlayers.Count == 1)
             return;
-        
+
         auctionData.UpdateData(currentBid);
 
-        StartAuction(); 
+        StartAuction();
+    }
+    //********************trade
+
+    public GameObject TradeParentForPlayers;
+    public GameObject PerfabTrade;
+    public tradewin tradewin;
+    public void TradeButton()
+    {
+        if (playerScripts.Count == 2)
+        {
+            playerMoving trader2 = playerScripts[0] == nowplayer ? playerScripts[1]: playerScripts[0]; 
+
+            tradewin.tradeWith(nowplayer, playerScripts[1]);
+        }
+        foreach (Transform child in TradeParentForPlayers.transform)
+            Destroy(child.gameObject);
+
+        for (int i = 1; i < playerScripts.Count; i++)
+        {
+            GameObject clone = Instantiate(PerfabTrade);
+            Button cloneButton = clone.GetComponent<Button>();
+
+
+
+            cloneButton.GetComponentInChildren<Text>().text = playerScripts[i].Name;
+            int j = i;
+            cloneButton.onClick.AddListener(() =>
+            {
+                tradewin.tradeWith(nowplayer, playerScripts[j]);
+
+            });
+
+            Image image = cloneButton.GetComponent<Image>();
+            image.material = playerScripts[i].colorForUI;
+
+
+            clone.transform.SetParent(TradeParentForPlayers.transform);
+            clone.SetActive(true);
+
+
+        }
+
     }
 
 
@@ -262,10 +342,21 @@ public class gameController : MonoBehaviour
         {
             if (owner != null)
             {
+                if (nowplayer == owner)
+                {
+                    nowplayer.overmoving = true;
+                    return;
+                }
                 int rent = getRent();
-                nowplayer.needPay(rent);
+                if (nowplayer.CheckBalance(-rent))
+                {
+                    nowplayer.balanceOperation(-rent);
+                    nowplayer.overmoving = true;
+                }
+                else
+                    nowplayer.needPay(rent);
+
                 owner.balanceOperation(rent);
-                nowplayer.overmoving = true;
             }
             else if (!nowplayer.isBot)
             {
@@ -273,14 +364,23 @@ public class gameController : MonoBehaviour
             }
             else if (nowplayer.isBot)
             {
-                if (nowplayer.CheckBalance(this.price))
+                if (nowplayer.CheckBalance(-this.price))
                 {
-                    game.buyPh();
+                    System.Random random = new System.Random();
+                    int variant = random.Next(1, 11);
+                    if (variant == 4)
+                    {
+                        game.auction();
+                        return;
+                    }
 
+                    game.buyPh();
                 }
                 else
                 {
-                    //?
+
+                    game.auction();
+
                 }
             }
         }
@@ -317,7 +417,7 @@ public class gameController : MonoBehaviour
             owner.philies.Add(this);
             ownerPlane.material = owner.color;
         }
-        
+
         /*
         public void mortgage()
         {
@@ -342,11 +442,18 @@ public class gameController : MonoBehaviour
         }
         public override void active(Player nowplayer)
         {
-            if (sum >= 0)
+            if (sum > 0)
+            {
                 nowplayer.balanceOperation(sum);
+                nowplayer.overmoving = true;
+            }
+            else if (nowplayer.CheckBalance(sum))
+            {
+                nowplayer.balanceOperation(sum);
+                nowplayer.overmoving = true;
+            }
             else
-                nowplayer.needPay(-sum);
-            nowplayer.overmoving = true;
+                nowplayer.needPay(sum);
         }
     }
 

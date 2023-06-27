@@ -308,11 +308,14 @@
 "Assets/scripts/companyDetalis.cs"
 "Assets/scripts/cub.cs"
 "Assets/scripts/exit.cs"
+"Assets/scripts/forBatton.cs"
 "Assets/scripts/gameController.cs"
 "Assets/scripts/img.cs"
 "Assets/scripts/loading_game_scene.cs"
 "Assets/scripts/media.cs"
 "Assets/scripts/playerMoving.cs"
+"Assets/scripts/sellMenu.cs"
+"Assets/scripts/tradewin.cs"
 "Assets/scripts/volume.cs"
 -langversion:9.0
 
