@@ -1,27 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static gameController;
+using static sellMenu;
 
 public class playerMoving : MonoBehaviour
 {
     public class Player
     {
+        public bool isNeedPay = false;
+        public bool inPrison = false;
+        public int howMachNeedPay = 0;
         public static gameController game;
         public bool isBot;
         public bool overmoving = false;
         public List<Philia> philies = new List<Philia>();
         public Material color;
+        public playerMoving thisMoving;
+        public bool taxFreeRound = false;
+
+
 
         private int balance = 10000;
 
 
 
 
-        public Player(bool bot, Material c)
+        public Player(bool bot, Material c, playerMoving thisMoving)
         {
             isBot = bot;
             color = c;
+            this.thisMoving = thisMoving;
         }
 
 
@@ -43,18 +53,85 @@ public class playerMoving : MonoBehaviour
         {
             if (this.isBot)
             {
+                int remainingSum = sum;
+                howMachNeedPay = sum;
+                isNeedPay = true;
+                List<Philia> philiesToSell = new List<Philia>();
 
+                foreach (Philia philia in philies)
+                {
+                    float philiaPrice = (float)philia.price * 0.9f;
+
+                    if (philiaPrice >= remainingSum)
+                    {
+                        philiesToSell.Add(philia);
+                        break;
+                    }
+                    else
+                    {
+                        philiesToSell.Add(philia);
+                        remainingSum -= (int)philiaPrice;
+                    }
+                }
+
+                foreach (Philia philia in philiesToSell)
+                {
+                    philia.ownerPlane.material = game.nullcolor;
+                    philia.owner = null;
+                    philies.Remove(philia);
+
+                    int newPrice = (int)((float)philia.price * 0.9f);
+                    balanceOperation(newPrice);
+                    remainingSum -= newPrice;
+
+                    if (remainingSum <= 0)
+                        break;
+
+
+                }
+                if (remainingSum > 0)
+                {
+                    game.PlayerLost(this.thisMoving);
+                }
             }
             else
             {
+                game.mapCanvas.SetActive(true);
+                game.mapCanvasGoButton.SetActive(false);
+                game.youNeedPay.text = "You need pay\n" + sum;
+                game.youNeedPay.gameObject.SetActive(true);
 
+                howMachNeedPay = sum;
+                isNeedPay = true;
             }
-            this.overmoving = true;
         }
 
         public bool tradeofferBot(List<Philia> takePh, List<Philia> givePh, int takeM, int giveM)
         {
-            return true;
+            float randomFactor = UnityEngine.Random.Range(0.8f, 1.2f); // Ёлемент случайности
+
+            // ќценка стоимости получаемых и отдаваемых филий
+            float takePhiliaValue = 0f;
+            foreach (Philia philia in takePh)
+            {
+                takePhiliaValue += (float)philia.price;
+            }
+
+            float givePhiliaValue = 0f;
+            foreach (Philia philia in givePh)
+            {
+                givePhiliaValue += (float)philia.price;
+            }
+
+            // ќценка суммы получаемых и отдаваемых денег
+            float takeMoneyValue = takeM * randomFactor;
+            float giveMoneyValue = giveM * randomFactor;
+
+            // ≈сли обща€ стоимость получаемых филий и денег превышает общую стоимость отдаваемых филий и денег,
+            // то бот совершает сделку
+
+
+            return (takePhiliaValue + takeMoneyValue) > (givePhiliaValue + giveMoneyValue);
         }
 
 
@@ -68,6 +145,10 @@ public class playerMoving : MonoBehaviour
     public Material color;
     public Material colorForUI;
     public string Name;
+    public GameObject phisicPlayer;
+    public GameObject avatarOnCanvas;
+    public GameObject balanceTextOnCanvas;
+
 
     //*********MOVING***********
     private Animator animator;
@@ -91,7 +172,34 @@ public class playerMoving : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         numberPlayer--;
-        player = new Player(isBot, color);
+        player = new Player(isBot, color, this);
+    }
+    private void Update()
+    {
+        if (player.isNeedPay)
+        {
+            if (player.CheckBalance(-player.howMachNeedPay))
+            {
+                player.isNeedPay = false;
+                player.balanceOperation(-player.howMachNeedPay);
+                player.howMachNeedPay = 0;
+                player.overmoving = true;
+                if (!isBot)
+                {
+                    game.youNeedPay.gameObject.SetActive(false);
+                    game.mapCanvas.SetActive(false);
+                    game.mapCanvasGoButton.SetActive(true);
+                }
+            }
+        }
+
+        if (balanceTextOnCanvas != null)
+            balanceTextOnCanvas.GetComponentInChildren<Text>().text = player.Balance.ToString();
+
+    }
+    public void moveTo(int where)
+    {
+        step((36 - field + where) % 36);
     }
     public void step(int count)
     {

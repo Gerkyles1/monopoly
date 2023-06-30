@@ -357,6 +357,7 @@
 "Assets/scripts/auctionDataUI.cs"
 "Assets/scripts/audioButton.cs"
 "Assets/scripts/button_animation.cs"
+"Assets/scripts/chanceAnimator.cs"
 "Assets/scripts/companyDetalis.cs"
 "Assets/scripts/cub.cs"
 "Assets/scripts/exit.cs"
@@ -366,9 +367,11 @@
 "Assets/scripts/loading_game_scene.cs"
 "Assets/scripts/media.cs"
 "Assets/scripts/playerMoving.cs"
+"Assets/scripts/save.cs"
 "Assets/scripts/sellMenu.cs"
 "Assets/scripts/tradewin.cs"
 "Assets/scripts/volume.cs"
+"Assets/scripts/WheelOfFortune.cs"
 -langversion:9.0
 
 /deterministic

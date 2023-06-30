@@ -11,7 +11,7 @@ public class gameController : MonoBehaviour
     public List<playerMoving> playerScripts;
     public cub cub;
     private playerMoving nowplayer;
-    private int nowPlayerIndex = 0;
+    public int nowPlayerIndex = 0;
     public companyDetalis detalis;
     public static Field[] map;
     public Text balance;
@@ -21,6 +21,12 @@ public class gameController : MonoBehaviour
     public GameObject[] builds;
     public Sprite[] logotipos;
     public Image auctionlogo;
+    public WheelOfFortune wheelOfFortune;
+    public GameObject mapCanvasGoButton;
+    public Text youNeedPay;
+    public Material nullcolor;
+    public GameObject prisonCoise;
+
     //private bool startauction = false;
 
 
@@ -39,14 +45,27 @@ public class gameController : MonoBehaviour
             new Philia(8, "ZeHipe", 1200, new int[]{250, 500, 1000}, new int[]{7, 9}, builds[4], logotipos[4], "Swiss luxury watches for men and women, combining rich watchmaking traditions with bold innovations.", ownerColors[4]),
             new Philia(9, "Rotartime", 1500, new int[]{300, 600, 1200}, new int[]{7, 8}, builds[5], logotipos[5], "Swiss watchmaking company manufacturing watches and related accessories", ownerColors[5]),
             new balanceOper(10, 2000),
-            new Chance(11),//Exchange
+            new Spetial(11, (player)=>
+            {
+                wheelOfFortune.spin(player.thisMoving);
+            }),//casino
             new Philia(12, "Foyt", 1800, new int[]{350, 700, 1400}, new int[]{13, 14}, builds[6], logotipos[6], "One of the leading industrialists in America, who radically changed the principle of automobile assembly line operation", ownerColors[6]),
             new Philia(13, "Jafar", 2000, new int[]{350, 700, 1400}, new int[]{12, 14}, builds[7], logotipos[7], "British automotive company specializing in the production of luxury limousines, sports coupes and racing cars", ownerColors[7]),
             new Philia(14, "MB", 2300, new int[]{400, 800, 1600}, new int[]{12, 13}, builds[8], logotipos[8], "German brand name for vehicles", ownerColors[8]),
             new Philia(15, "GBK", 2500, new int[]{400, 800, 1600}, new int[]{16, 17}, builds[9], logotipos[9], "A global biopharmaceutical company with a mission to combine science, technology and talent to prevent disease together", ownerColors[9]),
             new Philia(16, "Pyver", 2800, new int[]{450, 900, 1800}, new int[]{15, 17}, builds[10], logotipos[10], "An American pharmaceutical company. It was founded in 1849 and has been one of the world's market leaders ever since.", ownerColors[10]),
             new Philia(17, "JJ", 3100, new int[]{450, 900, 1800}, new int[]{15, 16}, builds[11], logotipos[11], "American company, a major manufacturer of cosmetic and sanitary products, as well as medical equipment.", ownerColors[11]),
-            new Chance(18),//Tax Inspectorate
+            new Spetial(18, (player)=>
+            {
+                int tax = player.philies.Count * 500;
+                if (player.CheckBalance(-tax))
+                {
+                    player.balanceOperation(-tax);
+                    player.overmoving = true;
+                }
+                else
+                    player.needPay(tax);
+            }),//Tax Inspectorate
             new Chance(19),
             new Philia(20, "Repip", 3300, new int[]{500, 1000, 2000}, new int[]{21, 22}, builds[12], logotipos[12], "A company that produces cherry drinks", ownerColors[12]),
             new Philia(21, "Cocla", 3500, new int[]{500, 1000, 2000}, new int[]{20, 22}, builds[13], logotipos[13], "Carbonated soft drink and the American company Cocla of the same name", ownerColors[13]),
@@ -57,7 +76,32 @@ public class gameController : MonoBehaviour
             new Philia(26, "Radon", 4200, new int[]{600, 1200, 2400}, new int[]{25, 27}, builds[16], logotipos[16], "A brand of computer products, including graphics processors, random access memory, software for RAM disks and solid-state drives", ownerColors[16]),
             new Philia(27, "IMPT", 4300, new int[]{650, 1300, 2600}, new int[]{25, 26}, builds[17], logotipos[17], "The world's largest semiconductor and device company, best known as a developer and manufacturer of x86-series microprocessors, processors for IBM-compatible personal computers.", ownerColors[17]),
             new Chance(28),
-            new Chance(29),//Prison
+            new Spetial(29, (player)=>
+            {
+                if (!player.isBot)
+                {
+                    if (player.CheckBalance(-1000))
+                    {
+                        prisonCoise.SetActive(true);
+                    }
+                    else
+                    {
+                        prisonSkipTurn();
+                    }
+                }
+                    
+                else
+                {
+                    if (player.CheckBalance(-1000))
+                    {
+                        prisonPay();
+                    }
+                    else
+                    {
+                        prisonSkipTurn();
+                    }
+                }
+            }),//Prison
             new Philia(30, "RX", 4500, new int[]{700, 1400, 2800}, new int[]{31, 32}, builds[18], logotipos[18], "The largest commercial TV channel in Germany", ownerColors[18]),
             new Philia(31, "ESN", 4700, new int[]{750, 1500, 3000}, new int[]{30, 32}, builds[19], logotipos[19], "American cable sports television channel.", ownerColors[19]),
             new Philia(32, "Expat", 4800, new int[]{750, 1500, 3000}, new int[]{30, 31}, builds[20], logotipos[20], "Pan-European television sports network.", ownerColors[20]),
@@ -71,10 +115,11 @@ public class gameController : MonoBehaviour
     }
     public void meinMethod()
     {
-        while (nowplayer.skips > 0)
+        if (nowplayer.skips > 0)
         {
             nowplayer.skips--;
-            nowPlayerIndex = (nowPlayerIndex + 1) % 4;
+            nowplayer.player.overmoving = true;
+            return;
         }
         cub.Throw(nowplayer);
     }
@@ -84,6 +129,7 @@ public class gameController : MonoBehaviour
     {
         map[nowplayer.Field].active(nowplayer.player);
     }
+
     public void playerEndMoving()
     {
 
@@ -116,9 +162,6 @@ public class gameController : MonoBehaviour
     }
     public void Update()
     {
-        balance.text = playerScripts[0].player.Balance.ToString();
-        for (int i = 0; i < 3; i++)
-            Botbalances[i].text = playerScripts[i + 1].player.Balance.ToString();
         if (nowplayer.player.overmoving)
         {
             nowplayer.player.overmoving = false;
@@ -138,6 +181,7 @@ public class gameController : MonoBehaviour
     private int currentPlayerIndex;
     private Philia nowAuctionphilia;
     private bool auctionIs = false;
+
 
     public void auction()
     {
@@ -163,13 +207,22 @@ public class gameController : MonoBehaviour
         if (auctionPlayers.Count == 1)
         {
             if (auctionPlayers[currentPlayerIndex].isBot)
-                OnYesButtonPressed();
+            {
+                System.Random random = new System.Random();
+                int variant = random.Next(1, 11);
+                if (variant != 4 && variant != 6)
+                {
+                    OnYesButtonPressed();
+                }
+                else
+                    OnNoButtonPressed();
+
+            }
             else
             {
                 auctionlogo.sprite = nowAuctionphilia.logotipies;
                 auctionData.UpdateData(currentBid);
             }
-            nowplayer.player.overmoving = true;
             return;
         }
 
@@ -251,7 +304,10 @@ public class gameController : MonoBehaviour
             auctionPlayers.RemoveAt(currentPlayerIndex);
 
         else if (auctionPlayers.Count == 1)
+        {
+            nowplayer.player.overmoving = true;
             return;
+        }
 
         auctionData.UpdateData(currentBid);
 
@@ -266,7 +322,7 @@ public class gameController : MonoBehaviour
     {
         if (playerScripts.Count == 2)
         {
-            playerMoving trader2 = playerScripts[0] == nowplayer ? playerScripts[1]: playerScripts[0]; 
+            playerMoving trader2 = playerScripts[0] == nowplayer ? playerScripts[1] : playerScripts[0];
 
             tradewin.tradeWith(nowplayer, playerScripts[1]);
         }
@@ -300,12 +356,45 @@ public class gameController : MonoBehaviour
 
     }
 
+    public void PlayerLost(playerMoving player)
+    {
+        nowPlayerIndex = nowPlayerIndex == 0 ? playerScripts.Count - 1 : nowPlayerIndex - 1;
+        foreach (Philia philia in player.player.philies)
+        {
+            philia.swichOwner(null);
+        }
+        playerScripts.Remove(player);
+        if (player.avatarOnCanvas != null)
+            Destroy(player.avatarOnCanvas);
+        Destroy(player.balanceTextOnCanvas);
+        Destroy(player.phisicPlayer);
+        nowplayer.player.overmoving = true;
+    }
+    public GameObject chanceCard;
+    public chanceAnimator chanceAnimator;
 
     public abstract class Field
     {
         public int nomer;
         public static gameController game;
         public abstract void active(Player nowplayer);
+    }
+    public void StartAction(Chance.ChanceAction action, Player nowplayer)
+    {
+        action.action(nowplayer);
+    }
+    public void prisonSkipTurn()
+    {
+        nowplayer.skips += 3;
+        nowplayer.player.overmoving = true;
+        prisonCoise.SetActive(false);
+    }
+    public void prisonPay()
+    {
+        nowplayer.player.balanceOperation(-1000);
+        nowplayer.player.overmoving = true;
+        prisonCoise.SetActive(false);
+
     }
 
     public class Philia : Field
@@ -410,6 +499,12 @@ public class gameController : MonoBehaviour
 
         public void swichOwner(Player newOwner)
         {
+            if (newOwner == null)
+            {
+                ownerPlane.material = game.nullcolor;
+                owner = null;
+                return;
+            }
             if (owner != null)
                 owner.philies.Remove(this);
 
@@ -442,31 +537,207 @@ public class gameController : MonoBehaviour
         }
         public override void active(Player nowplayer)
         {
-            if (sum > 0)
-            {
-                nowplayer.balanceOperation(sum);
-                nowplayer.overmoving = true;
-            }
-            else if (nowplayer.CheckBalance(sum))
+            if (nowplayer.CheckBalance(sum))
             {
                 nowplayer.balanceOperation(sum);
                 nowplayer.overmoving = true;
             }
             else
-                nowplayer.needPay(sum);
+                nowplayer.needPay(-sum);
         }
     }
 
     public class Chance : Field
     {
+        public class ChanceAction
+        {
+            public string text;
+            public Action<Player> action;
+
+            public ChanceAction(string text, Action<Player> action)
+            {
+                this.text = text;
+                this.action = action;
+            }
+        }
+
+        private static ChanceAction[] chanceActions = new ChanceAction[]
+        {
+            new ChanceAction("A gift of 1000", player =>
+            {
+                player.balanceOperation(1000);
+                player.overmoving = true;
+            }),
+            new ChanceAction("Go to the sector 'start'", player =>
+            {
+                player.thisMoving.moveTo(0);
+            }),
+            new ChanceAction("Happy Birthday (each player gives 300 each)", player =>
+            {
+                int totalPlayers = game.playerScripts.Count;
+                int amount = (totalPlayers - 1) * 300;
+                foreach (playerMoving otherPlayer in game.playerScripts)
+                {
+                    if (otherPlayer.player != player)
+                    {
+                        if (otherPlayer.player.CheckBalance(-300))
+                            otherPlayer.player.balanceOperation(-300);
+                        else
+                            otherPlayer.player.balanceOperation(-otherPlayer.player.Balance);
+                    }
+                }
+                player.balanceOperation(amount);
+                player.overmoving = true;
+            }),
+            new ChanceAction("Exemption from taxes for one round", player =>
+            {
+                player.taxFreeRound = true;
+                player.overmoving = true;
+            }),
+            new ChanceAction("Postal order 1500", player =>
+            {
+                player.balanceOperation(1500);
+                player.overmoving = true;
+            }),
+            new ChanceAction("Banking error - not in your favor -1000", player =>
+            {
+                int sum = -1000;
+                if (player.CheckBalance(sum))
+                {
+
+                    player.balanceOperation(sum);
+                    player.overmoving = true;
+                }
+                else
+                    player.needPay(-sum);
+            }),
+            new ChanceAction("Pay for mobile services connection 500", player =>
+            {
+               int sum = -500;
+                if (player.CheckBalance(sum))
+                {
+
+                    player.balanceOperation(sum);
+                    player.overmoving = true;
+                }
+                else
+                    player.needPay(-sum);
+            }),
+            new ChanceAction("You are lucky!\nYou have found a treasure of 1500", player =>
+            {
+                player.balanceOperation(1500);
+                player.overmoving = true;
+            }),
+            new ChanceAction("A fine of 2000", player =>
+            {
+               int sum = -2000;
+                if (player.CheckBalance(sum))
+                {
+
+                    player.balanceOperation(sum);
+                    player.overmoving = true;
+                }
+                else
+                    player.needPay(-sum);
+            }),
+            new ChanceAction("Go to the tax office", player =>
+            {
+                player.thisMoving.moveTo(18);
+            }),
+            new ChanceAction("Go 3 sectors forward", player =>
+            {
+                player.thisMoving.step(3);
+            }),
+            new ChanceAction("Go to the 'start' sector", player =>
+            {
+                player.thisMoving.moveTo(0);
+            }),
+            new ChanceAction("Skip one turn", player =>
+            {
+                player.thisMoving.skips++;
+                player.overmoving = true;
+            }),
+            new ChanceAction("Legacy 5000", player =>
+            {
+                player.balanceOperation(5000);
+                player.overmoving = true;
+            }),
+            new ChanceAction("Go 4 sectors forward", player =>
+            {
+                player.thisMoving.step(4);
+            }),
+            new ChanceAction("Bank error in your favor +1000", player =>
+            {
+                player.balanceOperation(1000);
+                player.overmoving = true;
+            }),
+            new ChanceAction("Fire inspection fine 1500", player =>
+            {
+               int sum = -1500;
+                if (player.CheckBalance(sum))
+                {
+
+                    player.balanceOperation(sum);
+                    player.overmoving = true;
+                }
+                else
+                    player.needPay(-sum);
+            }),
+            new ChanceAction("You are lucky, you found a treasure of 1500", player =>
+            {
+                player.balanceOperation(1500);
+                player.overmoving = true;
+            }),
+            new ChanceAction("Repair your branches (200 each)", player =>
+            {
+                int repairCost = player.philies.Count * 200;
+
+                if (player.CheckBalance(-repairCost))
+                {
+                    player.balanceOperation(-repairCost);
+                    player.overmoving = true;
+                }
+                else
+                    player.needPay(repairCost);
+            }),
+            new ChanceAction("Skip one move", player =>
+            {
+                player.thisMoving.skips++;
+                player.overmoving = true;
+            }),
+            //new ChanceAction("Draw the next card", player => player.thisMoving.drawNextCard()),    
+            // Добавьте остальные элементы массива с текстом и действиями шанса
+        };
+
+
         public Chance(int nomer)
         {
             this.nomer = nomer;
         }
         public override void active(Player nowplayer)
         {
-            nowplayer.overmoving = true;
+            //nowplayer.overmoving = true;
+            ChanceAction randomAction = chanceActions[UnityEngine.Random.Range(0, chanceActions.Length)];
+            if (nowplayer.isBot)
+            {
+                game.StartAction(randomAction, nowplayer);
+                return;
+            }
+            game.chanceAnimator.chanceCtor(randomAction, nowplayer);
         }
     }
 
+    public class Spetial : Field
+    {
+        private Action<Player> Method;
+        public Spetial(int nomer, Action<Player> Method)
+        {
+            this.nomer = nomer;
+            this.Method = Method;
+        }
+        public override void active(Player nowplayer)
+        {
+            Method(nowplayer);
+        }
+    }
 }

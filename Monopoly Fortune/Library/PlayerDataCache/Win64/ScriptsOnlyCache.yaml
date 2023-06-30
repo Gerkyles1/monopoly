@@ -1,9 +1,11 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - WheelOfFortune
     - auctionDataUI
     - audioButton
     - button_animation
+    - chanceAnimator
     - companyDetalis
     - cub
     - exit
@@ -237,6 +239,12 @@ ScriptsOnlyBuild:
     fullTypeName: gameController
     methodName: buyPh
   - assembly: Assembly-CSharp
+    fullTypeName: gameController
+    methodName: prisonSkipTurn
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
     fullTypeName: companyDetalis
     methodName: show
   - assembly: UnityEngine.CoreModule
@@ -266,6 +274,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: gameController
     methodName: OnNoButtonPressed
+  - assembly: Assembly-CSharp
+    fullTypeName: chanceAnimator
+    methodName: onclic
   - assembly: Assembly-CSharp
     fullTypeName: companyDetalis
     methodName: show
@@ -378,11 +389,11 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.UI.InputField
     methodName: set_text
   - assembly: Assembly-CSharp
+    fullTypeName: playerMoving
+    methodName: step
+  - assembly: Assembly-CSharp
     fullTypeName: gameController
-    methodName: TradeButton
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
+    methodName: prisonPay
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -428,52 +439,58 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1614}
+      Script: {instanceID: 1618}
     - Class: 114
-      Script: {instanceID: 1642}
+      Script: {instanceID: 1646}
     - Class: 114
-      Script: {instanceID: 2124}
+      Script: {instanceID: 2136}
     - Class: 114
-      Script: {instanceID: 2130}
+      Script: {instanceID: 2142}
     - Class: 114
-      Script: {instanceID: 2638}
+      Script: {instanceID: 2650}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2796}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2814}
     - Class: 114
-      Script: {instanceID: 2848}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 2892}
+      Script: {instanceID: 2904}
     - Class: 114
-      Script: {instanceID: 3136}
+      Script: {instanceID: 3080}
     - Class: 114
-      Script: {instanceID: 3292}
+      Script: {instanceID: 3150}
     - Class: 114
-      Script: {instanceID: 3308}
+      Script: {instanceID: 3306}
     - Class: 114
-      Script: {instanceID: 4126}
+      Script: {instanceID: 3322}
     - Class: 114
-      Script: {instanceID: 5008}
+      Script: {instanceID: 4142}
     - Class: 114
-      Script: {instanceID: 5330}
+      Script: {instanceID: 5024}
     - Class: 114
-      Script: {instanceID: 5632}
+      Script: {instanceID: 5346}
     - Class: 114
-      Script: {instanceID: 5636}
+      Script: {instanceID: 5648}
     - Class: 114
-      Script: {instanceID: 6100}
+      Script: {instanceID: 5652}
     - Class: 114
-      Script: {instanceID: 6108}
+      Script: {instanceID: 6026}
     - Class: 114
-      Script: {instanceID: 6512}
+      Script: {instanceID: 6120}
     - Class: 114
-      Script: {instanceID: 7068}
+      Script: {instanceID: 6128}
     - Class: 114
-      Script: {instanceID: 7166}
+      Script: {instanceID: 6532}
     - Class: 114
-      Script: {instanceID: 7450}
+      Script: {instanceID: 7092}
+    - Class: 114
+      Script: {instanceID: 7190}
+    - Class: 114
+      Script: {instanceID: 7474}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -522,35 +539,35 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1614}
+      Script: {instanceID: 1618}
     - Class: 114
-      Script: {instanceID: 1642}
+      Script: {instanceID: 1646}
     - Class: 114
-      Script: {instanceID: 2216}
+      Script: {instanceID: 2228}
     - Class: 114
-      Script: {instanceID: 2638}
+      Script: {instanceID: 2650}
     - Class: 114
-      Script: {instanceID: 2848}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 3136}
+      Script: {instanceID: 3150}
     - Class: 114
-      Script: {instanceID: 3534}
+      Script: {instanceID: 3548}
     - Class: 114
-      Script: {instanceID: 4142}
+      Script: {instanceID: 4158}
     - Class: 114
-      Script: {instanceID: 4394}
+      Script: {instanceID: 4410}
     - Class: 114
-      Script: {instanceID: 5072}
+      Script: {instanceID: 5088}
     - Class: 114
-      Script: {instanceID: 5330}
+      Script: {instanceID: 5346}
     - Class: 114
-      Script: {instanceID: 5636}
+      Script: {instanceID: 5652}
     - Class: 114
-      Script: {instanceID: 6100}
+      Script: {instanceID: 6120}
     - Class: 114
-      Script: {instanceID: 7010}
+      Script: {instanceID: 7034}
     - Class: 114
-      Script: {instanceID: 7590}
+      Script: {instanceID: 7614}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -630,13 +647,13 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 2b75c1bbd5de1abfa5b477b5a45d518d
+      Hash: 5291be2c0e970706a3b8b7f1ff9886fd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: gameController
   - hash:
       serializedVersion: 2
-      Hash: e40cbcdc77c1387943f5215ebb77e929
+      Hash: 5032a7e924f3f71a5f73f21ad63a469a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: playerMoving
@@ -808,6 +825,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnDropdownValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: b84a5015c02859e3005c1fcb0a3118ac
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WheelOfFortune
   - hash:
       serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
@@ -1204,6 +1227,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseUpAsButtonMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 4aea5e57b49e6a441aa69d106e8d6a30
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: chanceAnimator
   - hash:
       serializedVersion: 2
       Hash: e09e8bebc0fcd32bb8af1287a6b44816

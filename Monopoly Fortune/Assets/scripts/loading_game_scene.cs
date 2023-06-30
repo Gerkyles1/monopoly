@@ -1,13 +1,11 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class loading_game_scene : MonoBehaviour
 {
-    public string sceneName; 
 
-    public void LoadScene()
+    public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
-
 }
